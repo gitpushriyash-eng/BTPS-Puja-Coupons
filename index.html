@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTPS Durga Puja Coupons</title>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #ffb300;
+            --background-color: #fff9e6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .coupon-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-top: 8px solid var(--primary-color);
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="file"] {
+            background: #fdfdfd;
+            padding: 8px;
+        }
+
+        input:focus, select:focus, input[type="file"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: normal;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            flex: 1;
+        }
+
+        input[type="radio"]:checked + span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .total-display {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #856404;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .note {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="coupon-card">
+    <h2>BTPS Durga Puja Coupons</h2>
+    <div class="subtitle">Food Coupon Booking Portal</div>
+    
+    <!-- Added enctype="multipart/form-data" to allow file uploads -->
+    <form id="couponForm" action=https://script.google.com/macros/s/AKfycbyi34NlYuCLbBs6g1DbcaY1Zpb119faKevxtNhIULAc18kOX7R4aet9ynytSO9YRkCR/exec method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="empNo">Employee Number / MIS</label>
+            <input type="text" id="empNo" name="empNo" required placeholder="Enter Employee or MIS ID">
+        </div>
+
+        <div class="form-group">
+            <label for="date">Select Date</label>
+            <select id="date" name="date" required>
+                <option value="" disabled selected>Choose a date</option>
+                <option value="20.05.2026">20.05.2026</option>
+                <option value="21.05.2026">21.05.2026</option>
+                <option value="22.05.2026">22.05.2026</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="heads">Number of Heads</label>
+            <input type="number" id="heads" name="heads" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+            <label>Meal Preference</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="mealType" value="Veg" checked onclick="calculateTotal()">
+                    <span>Veg (Rs. 100)</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mealType" value="Non-Veg" onclick="calculateTotal()">
+                    <span>Non-Veg (Rs. 150)</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- NEW: Payment Screenshot Upload Field -->
+        <div class="form-group">
+            <label for="screenshot">Upload Payment Screenshot</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+            <div class="note">Please upload JPG/PNG proof after making the UPI transaction.</div>
+        </div>
+
+        <div class="total-display">
+            Total Amount: ₹<span id="totalAmount">100</span>
+        </div>
+
+        <!-- Hidden inputs to pass calculated total to Apps Script -->
+        <input type="hidden" id="hiddenTotal" name="totalAmount" value="100">
+
+        <button type="submit" class="submit-btn">Submit Booking</button>
+    </form>
+</div>
+
+<script>
+    const headsInput = document.getElementById('heads');
+    const totalAmountSpan = document.getElementById('totalAmount');
+    const hiddenTotalInput = document.getElementById('hiddenTotal');
+
+    function calculateTotal() {
+        const heads = parseInt(headsInput.value) || 0;
+        const mealType = document.querySelector('input[name="mealType"]:checked').value;
+        const pricePerHead = mealType === 'Veg' ? 100 : 150;
+        
+        const total = heads * pricePerHead;
+        totalAmountSpan.textContent = total;
+        hiddenTotalInput.value = total;
+    }
+
+    headsInput.addEventListener('input', calculateTotal);
+</script>
+
+</body>
+</html>
