@@ -3,232 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTPS Durga Puja Coupons</title>
+    <title>BTPS Durga Puja Coupons Booking</title>
     <style>
-        :root {
-            --primary-color: #d32f2f;
-            --secondary-color: #ffb300;
-            --background-color: #fff9e6;
-            --text-color: #333;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff9e6;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
-
-        .coupon-card {
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 450px;
+        .container {
+            background-color: #ffffff;
             padding: 30px;
-            border-top: 8px solid var(--primary-color);
-            box-sizing: border-box;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            border-top: 6px solid #d32f2f;
         }
-
         h2 {
             text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-        }
-
-        .form-group {
+            color: #d32f2f;
             margin-bottom: 20px;
+            font-size: 24px;
         }
-
+        .form-group {
+            margin-bottom: 18px;
+        }
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 14px;
+            color: #555;
         }
-
-        input[type="text"],
-        input[type="number"],
-        input[type="file"],
-        select {
+        input, select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        input[type="file"] {
-            background: #fdfdfd;
-            padding: 8px;
-        }
-
-        input:focus, select:focus, input[type="file"]:focus {
+            font-size: 15px;
             outline: none;
-            border-color: var(--primary-color);
+            transition: border-color 0.2s;
         }
-
-        .radio-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 5px;
+        input:focus, select:focus {
+            border-color: #5f259f;
         }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-weight: normal;
-            background: #f9f9f9;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            flex: 1;
-        }
-
-        input[type="radio"]:checked + span {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .total-display {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #856404;
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-
-        .submit-btn {
-            background-color: var(--primary-color);
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #5f259f;
             color: white;
             border: none;
-            padding: 14px;
-            width: 100%;
             border-radius: 6px;
-            font-size: 1.1rem;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background-color 0.2s;
+            margin-top: 10px;
         }
-
-        .submit-btn:hover {
-            background-color: #b71c1c;
+        button:hover {
+            background-color: #4a1c7e;
         }
-
-        .note {
-            font-size: 0.8rem;
-            color: #777;
-            margin-top: 4px;
+        /* Loader Screen Styles */
+        #loadingMessage {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #d32f2f;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 25px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .btn-payment {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #5f259f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .btn-success-cod {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="coupon-card">
-    <h2>BTPS Durga Puja Coupons</h2>
-    <div class="subtitle">Food Coupon Booking Portal</div>
-    
-    <!-- Added enctype="multipart/form-data" to allow file uploads -->
-    <form id="couponForm" action="https://script.google.com/macros/s/AKfycbyGYMoOp6mo9atEcTHYmab66O11vwcwC7W9Dm56hGE4tIuG3sucyQ3CRKyqdbibktSI/exec" method="POST">
+<div class="container">
+    <form id="couponForm">
+        <h2>Coupon Booking Form</h2>
         
         <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
         </div>
 
         <div class="form-group">
-            <label for="empNo">Employee Number / MIS</label>
-            <input type="text" id="empNo" name="empNo" required placeholder="Enter Employee or MIS ID">
+            <label for="empNo">Employee No</label>
+            <input type="text" id="empNo" name="empNo" placeholder="Enter Employee Number" required>
         </div>
 
         <div class="form-group">
-            <label for="date">Select Date</label>
-            <select id="date" name="date" required>
-                <option value="" disabled selected>Choose a date</option>
-                <option value="20.05.2026">20.05.2026</option>
-                <option value="21.05.2026">21.05.2026</option>
-                <option value="22.05.2026">22.05.2026</option>
-            </select>
+            <label for="date">Booking Date</label>
+            <input type="date" id="date" name="date" required>
         </div>
 
         <div class="form-group">
             <label for="heads">Number of Heads</label>
-            <input type="number" id="heads" name="heads" min="1" value="1" required>
+            <input type="number" id="heads" name="heads" min="1" placeholder="Number of people" required>
         </div>
 
         <div class="form-group">
-            <label>Meal Preference</label>
-            <div class="radio-group">
-                <label class="radio-label">
-                    <input type="radio" name="mealType" value="Veg" checked onclick="calculateTotal()">
-                    <span>Veg (Rs. 100)</span>
-                </label>
-                <label class="radio-label">
-                    <input type="radio" name="mealType" value="Non-Veg" onclick="calculateTotal()">
-                    <span>Non-Veg (Rs. 150)</span>
-                </label>
-            </div>
+            <label for="mealType">Meal Type</label>
+            <select id="mealType" name="mealType" required>
+                <option value="" disabled selected>Select option</option>
+                <option value="Veg">Veg</option>
+                <option value="Non-Veg">Non-Veg</option>
+            </select>
         </div>
 
-        <!-- NEW: Payment Screenshot Upload Field -->
         <div class="form-group">
-            <label for="screenshot">Upload Payment Screenshot</label>
-            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-            <div class="note">Please upload JPG/PNG proof after making the UPI transaction.</div>
+            <label for="totalAmount">Total Amount (₹)</label>
+            <input type="number" id="totalAmount" name="totalAmount" placeholder="Enter Amount to Pay" required>
         </div>
 
-        <div class="total-display">
-            Total Amount: ₹<span id="totalAmount">100</span>
+        <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="" disabled selected>Select payment path</option>
+                <option value="UPI">Pay via PhonePe / UPI App</option>
+                <option value="COD">Cash on Delivery (Pay at Counter)</option>
+            </select>
         </div>
 
-        <!-- Hidden inputs to pass calculated total to Apps Script -->
-        <input type="hidden" id="hiddenTotal" name="totalAmount" value="100">
-
-        <button type="submit" class="submit-btn">Submit Booking</button>
+        <button type="submit" id="submitBtn">Submit Booking</button>
     </form>
+
+    <div id="loadingMessage" style="display: none;">
+        <div id="savingState">
+            <h2>Processing Booking...</h2>
+            <p style="margin-top: 10px; color: #555;">Saving your details securely into the database...</p>
+            <div class="loader"></div>
+        </div>
+
+        <div id="upiRedirectState" style="display: none;">
+            <h2 style="color: #5f259f;">Booking Registered Successfully!</h2>
+            <p style="margin-top: 10px; color: #555;">Launching PhonePe to process your payment of <strong id="upiAmountLabel"></strong>...</p>
+            <div class="loader" style="border-top-color: #5f259f;"></div>
+            <p style="font-size: 14px; color: #333; margin-top: 15px;">If PhonePe does not open automatically on your device, tap below:</p>
+            <a id="manualUpiBtn" class="btn-payment" href="#">Open PhonePe / UPI App</a>
+        </div>
+
+        <div id="codSuccessState" style="display: none;">
+            <h2 style="color: #2e7d32;">Order Confirmed! 🎉</h2>
+            <p style="margin-top: 12px; color: #333; font-size: 16px;">Your coupon request has been filed under <strong>Cash on Delivery</strong>.</p>
+            <p style="margin-top: 8px; color: #666;">Please hand over <strong id="codAmountLabel" style="color:#2e7d32;"></strong> at the collection venue counter to pick up your entry coupons.</p>
+            <button onclick="window.location.reload();" class="btn-success-cod">Book Another Coupon</button>
+        </div>
+    </div>
 </div>
 
 <script>
-    const headsInput = document.getElementById('heads');
-    const totalAmountSpan = document.getElementById('totalAmount');
-    const hiddenTotalInput = document.getElementById('hiddenTotal');
+document.getElementById('couponForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
 
-    function calculateTotal() {
-        const heads = parseInt(headsInput.value) || 0;
-        const mealType = document.querySelector('input[name="mealType"]:checked').value;
-        const pricePerHead = mealType === 'Veg' ? 100 : 150;
-        
-        const total = heads * pricePerHead;
-        totalAmountSpan.textContent = total;
-        hiddenTotalInput.value = total;
-    }
+    // 1. Get Web App Script URL (!!! PLACE YOUR DEPLOYED APPS SCRIPT URL HERE !!!)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzfnb-9-pwwAGaI61urSHUK4qdKjxd2tu7Iq1H8iQriwCTiZ4rdoWT1FMq7o5q39DWw/exec'; 
 
-    headsInput.addEventListener('input', calculateTotal);
+    const formData = new FormData(this);
+    const totalAmount = document.getElementById('totalAmount').value;
+    const bookingDate = document.getElementById('date').value;
+    const selectedPayment = document.getElementById('paymentMethod').value;
+
+    // 2. Clear visual form block out and reveal general storage loop sequence UI
+    document.getElementById('couponForm').style.display = 'none';
+    document.getElementById('loadingMessage').style.display = 'block';
+    document.getElementById('savingState').style.display = 'block';
+    document.getElementById('upiRedirectState').style.display = 'none';
+    document.getElementById('codSuccessState').style.display = 'none';
+
+    // 3. Dispatch form data silently into the Google Sheet columns 
+    fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+        // Drop standard loop animations once storage confirms done
+        document.getElementById('savingState').style.display = 'none';
+
+        // 4. Branch user journey state dynamically based on user interaction input
+        if (selectedPayment === 'UPI') {
+            // Unhide payment portal elements
+            document.getElementById('upiAmountLabel').innerText = "₹" + totalAmount;
+            document.getElementById('upiRedirectState').style.display = 'block';
+
+            // Construct Deep UPI Linking String Matrix
+            const upiId = "9593476267@ibl";
+            const merchantName = "BTPS Durga Puja Coupons";
+            const transactionNote = "Coupon Booked for " + bookingDate;
+            
+            const upiUrl = "upi://pay?pa=" + encodeURIComponent(upiId) +
+                         "&pn=" + encodeURIComponent(merchantName) +
+                         "&am=" + encodeURIComponent(totalAmount) +
+                         "&cu=INR" +
+                         "&tn=" + encodeURIComponent(transactionNote);
+
+            // Connect backup clickable trigger point
+            document.getElementById('manualUpiBtn').href = upiUrl;
+
+            // Instantly attempt opening native smartphone deep-linked app applications
+            window.location.href = upiUrl;
+
+        } else if (selectedPayment === 'COD') {
+            // Unhide offline execution text boxes
+            document.getElementById('codAmountLabel').innerText = "₹" + totalAmount;
+            document.getElementById('codSuccessState').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        alert('Data transmission error. Check network connection and retry submission.');
+        document.getElementById('couponForm').style.display = 'block';
+        document.getElementById('loadingMessage').style.display = 'none';
+        console.error('Error handling entry submission:', error);
+    });
+});
 </script>
 
 </body>
